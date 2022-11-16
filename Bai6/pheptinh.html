@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="nb1">
+    <input type="text" id="nb2">
+    <button type="button" onclick="add()">Cong</button>
+    <button type="button" onclick="sub()">Tru</button>
+    <button type="button" onclick="sum()">Nhan</button>
+    <button type="button" onclick="div()">Chia</button>
+    <p id="kq"></p>
+    <br>
+    <script>
+        
+        function add() { 
+            let nb1 = +document.getElementById('nb1').value;
+            let nb2 = +document.getElementById('nb2').value;    
+           document.getElementById('kq').innerHTML =nb1+nb2 ;      
+        }
+        function sub() {   
+            let nb1 = +document.getElementById('nb1').value;
+            let nb2 = +document.getElementById('nb2').value;     
+           document.getElementById('kq').innerHTML =nb1-nb2 ;      
+        }
+        function sum() {  
+            let nb1 = +document.getElementById('nb1').value;
+            let nb2 = +document.getElementById('nb2').value;      
+           document.getElementById('kq').innerHTML =nb1*nb2 ;      
+        }
+        function div() {    
+            let nb1 = +document.getElementById('nb1').value;
+            let nb2 = +document.getElementById('nb2').value;    
+           document.getElementById('kq').innerHTML =nb1/nb2 ;      
+        }
+    </script>
+</body>
+</html>
