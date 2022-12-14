@@ -12,11 +12,18 @@
     <script>
         let a = +prompt('Nhap vào số a:');
         let b = +prompt('Nhap vào số b:');
-        function check(){
-            for(let i =a; i<=b; i++){
-                a = a%3==0? (a>20? (document.write(a +'<br>')):false):false;
-                b = b%3==0? (b>20? (document.write(b +'<br>')):false):false;
-            }       
+
+        function check() {
+            var x;
+            if (a >= b) {
+                return;
+            } else {
+                document.write("Cac so thoa man la: " );
+                for (let i = a; i <= b; i++) {
+                    x = i % 3 == 0 ? (i > 20 ? (document.write(i + ', ')) : false) : false;
+                }
+            }
+
         }
         check();
     </script>
