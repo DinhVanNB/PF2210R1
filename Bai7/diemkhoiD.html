@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+</head>
+<body>
+    <h1>Tính điểm ĐH khối D</h1>
+    <Label>Môn Toán</Label>
+     <input type="text" id="toan">
+     <br>
+    <Label>Môn Văn</Label>
+    <input type="text" name="" id="van">
+    <br>
+    <Label>Môn Anh</Label>
+    <input type="text" name="" id="anh">
+    <br>
+    <Label>Khu vực</Label>
+    <select name="" id="select1">
+        <option value="0.75">KV1</option>
+        <option value="0.5">KV2-NT</option>
+        <option value="0.25">KV2</option>
+        <option value="0">KV3</option>
+    </select>
+    <br>
+    <button onclick="tinh()">Tính điểm</button>
+    <h3 id="src"></h3>
+    <script>
+        function tinh(){
+            let toan= +document.getElementById('toan').value;
+            let van= +document.getElementById('van').value;
+            let anh= +document.getElementById('anh').value;
+            let kv= +document.getElementById('select1').value;
+            let tongdiem = toan + van + anh + kv;
+            var diemchuan = 19.5;
+            if(tongdiem>=diemchuan){
+                document.getElementById('src').innerHTML = "Đỗ";
+            }
+            else{
+                document.getElementById('src').innerHTML = "Trượt";
+            }
+        }
+    </script>
+</body>
+</html>

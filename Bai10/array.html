@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- <script>
+         let arr= [1,2,3,4,5,6,7,8];
+         for(let i = 0 ; i<arr.length; i++){
+            document.write(arr[i] + "<br>");
+         }
+    </script> -->
+    <!-- <script>
+        let arr= [1,2,3,4,5,6,7,8];
+        for(let i = 0 ; i<arr.length; i++){
+           document.write("<h1>" + arr[i] + "</h1>" );
+        }
+   </script> -->
+    <!-- <script>
+    let arr= [1,2,3,4,5,6,7,8];
+    for(let i = 0 ; i<arr.length; i++){
+        if(arr[i]%2!=0){
+            document.write("<h1>" + arr[i] + "</h1>" );
+        }
+        else
+            document.write("<h2>" + arr[i] + "</h2>" );
+    }
+</script> -->
+    <!-- <script>
+        let arr = [1, 2, 3, 4, 5, 6, 7, 8,9];
+        let dem = 0;
+        let total = 0;
+        for (let i = 0; i < arr.length; i++) {
+            if (arr[i] % 3 == 0) {
+                dem++;
+                total += arr[i];
+            }              
+        }
+        document.write(total / dem);
+    </script> -->
+    <!-- <script>
+        let arr = [1, 2, 3, 39, 5, 6, 7, 8,9];
+        let max =arr[0];
+        let vt=0;
+        for(let i =0; i<arr.length; i++){
+            if(max<arr[i]){
+                max= arr[i];
+                vt= i;
+            }
+        }
+        document.write('So max la: '+ max + '<br>'+ 'Vi tri max la: ' +vt );
+    </script> -->
+    <!-- <script>
+        let number = +prompt('Nhap vao so')
+        let arr = [1, 2, 3, 39, 5, 6, 7, 8, 9];
+        let vt = -1;
+        for (let i = 0; i < arr.length; i++) {
+            if (number == arr[i]) {
+                vt = i;
+            }
+        }
+        document.write('Vi tri  la: ' + vt);
+    </script> -->
+    <script>
+        let arr = [7, 6, 4, 8, 1, 89, 2, 5, 2, 4];  
+        let dem = 0;
+        let j=1,i=0;
+        for (i; i < arr.length-1; i++) {
+            
+            for (j; j < arr.length; j++) {
+                if(arr[i] == arr[j]) {
+                    dem++;
+                }
+            }
+            if (dem == 0) {
+                document.write(arr[i]);
+            }
+            dem=0;
+        }
+    </script>
+</body>
+
+</html>

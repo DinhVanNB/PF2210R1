@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="vni">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cau4</title>
+</head>
+
+<body>
+    <script>
+        let a = +prompt('Nhap vào số a:');
+        let b = +prompt('Nhap vào số b:');
+        function check(){
+            for(let i =a; i<=b; i++){
+                a = a%3==0? (a>20? (document.write(a +'<br>')):false):false;
+                b = b%3==0? (b>20? (document.write(b +'<br>')):false):false;
+            }       
+        }
+        check();
+    </script>
+</body>
+
+</html>

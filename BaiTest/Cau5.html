@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="vni">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cau5</title>
+</head>
+
+<body>
+    <script>
+        let a = +prompt('Nhap vào số a:');
+        let b = +prompt('Nhap vào số b:');
+        let c = +prompt('Nhap vào số c:');
+
+        function dientichtamgiac() {
+            if (a > 0 && b > 0 && c > 0) {
+                let p = (a + b + c) / 2;
+                let s = Math.sqrt(p * (p - a) * (p - b) * (p - c));
+                document.write(s);
+            }
+        }
+
+        dientichtamgiac();
+    </script>
+</body>
+
+</html>

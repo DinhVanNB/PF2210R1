@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Giá hoa quả</h1>
+    <input type="text" id="inp">
+    <button onclick="searchPrice()">Xem giá</button>
+    <h3 id="rs"></h3>
+    <script>
+        function searchPrice() {
+            
+            let n = document.getElementById('inp').value.toLowerCase();
+            let g = "";
+            if(n=="ổi"){
+                g = "20k vnd";
+            }
+            else if(n=="dưa hấu"){
+                g = "30k vnd";
+            }
+            else if(n=="táo"){
+                g ="35k vnd";
+            }
+            else{
+                 g = "không tìm thấy kết quả"
+            }
+            document.getElementById('rs').innerHTML=g;
+        }
+    </script>
+</body>
+</html>

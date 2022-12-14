@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="inputt">
+    <select name=""  id="select1">
+        <option value="VND">VND</option>
+        <option value="USD">USD</option>
+    </select>
+    <select name="" id="select2">
+        <option value="USD">USD</option>
+        <option value="VND">VND</option>
+    </select>
+    <button onclick="doi()">Quy đổi</button>
+    <h3 id="src"></h3>
+    <script>
+        function doi(){
+            let tien = document.getElementById('inputt').value;
+            let select1 = document.getElementById('select1').value;
+            let select2 = document.getElementById('select2').value;
+            if(select1==select2){
+                document.getElementById('src').innerHTML = tien;
+            }
+            if(select1=="USD" && select2=="VND"){
+                document.getElementById('src').innerHTML = tien*24000;
+            }
+            if(select1=="VND" && select2=="USD"){
+                document.getElementById('src').innerHTML = tien/24000 ;
+            }
+        }
+    </script>
+</body>
+</html>

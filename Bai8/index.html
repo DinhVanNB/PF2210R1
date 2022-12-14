@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="text" id="inpp">
+    <button onclick="tinhngay()">Tính số ngày</button>
+    <h3 id="src"></h3>
+    <script>
+        // let x = 0;
+        // let y = 0;
+        // if (x++ > 0 && x++ > -1) {
+        //     x++;
+        // }
+        // if (y++ > 0 & y++ > -1) {
+        //     y++;
+        // }
+        // alert(x);
+        // alert(y);
+        function tinhngay() {
+            let thang = document.getElementById('inpp').value;
+            let songay = document.getElementById('src');
+            switch (thang) {
+                case 1:
+                case 3:
+                case 5:
+                case 7:
+                case 8:
+                case 10:
+                case 12: {
+                    songay.innerHTML = '31 ngay';
+                    break;
+                }
+                case '2': {
+                    songay.innerHTML = '28 hoac 29 ngay';
+                    break;
+                }
+                
+                case 4:
+                case 6:
+                case 9:
+                case 11:
+                {
+                    songay.innerHTML = '30 ngay';
+                    break;
+                }
+
+            }
+        }
+    </script>
+</body>
+
+</html>

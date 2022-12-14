@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="vni">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cau2</title>
+</head>
+
+<body>
+    <script>
+        let a = +prompt('Nhap vào số a:');
+        let b = +prompt('Nhap vào số b:');
+        let tong =0;
+        function tinhtong() {
+            if (a >= b) {
+                return;
+            } else {
+                for (let i = a; i <= b; i++) {
+                    if(i%2!=0){
+                        tong +=i;
+                    }
+                    
+                }
+            }
+            document.write("Tong cac so le tu a den b la: " + tong);
+        }
+        tinhtong();
+    </script>
+</body>
+
+</html>
