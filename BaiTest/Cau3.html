@@ -12,11 +12,11 @@
     <script>
         let a = +prompt('Nhap vào số a:');
         let b = +prompt('Nhap vào số b:');
-        let c = +prompt('Nhap vào số b:');
-        function min(){
-            a = a>b? (a>c? a:c):(b>c? b:c);
-            document.write("So lon nhat trong ba so la: " + a);
-        }
+        let c = +prompt('Nhap vào số c:');
+        min = a => (
+            a = a > b ? (a > c ? a : c) : (b > c ? b : c),
+            document.write("So lon nhat trong ba so la: " + a)
+        )
         min();
     </script>
 </body>

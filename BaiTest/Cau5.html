@@ -13,15 +13,13 @@
         let a = +prompt('Nhap vào số a:');
         let b = +prompt('Nhap vào số b:');
         let c = +prompt('Nhap vào số c:');
-
-        function dientichtamgiac() {
-            if (a > 0 && b > 0 && c > 0) {
-                let p = (a + b + c) / 2;
-                let s = Math.sqrt(p * (p - a) * (p - b) * (p - c));
-                document.write(s);
-            }
-        }
-
+        let p = 0;
+        var s;
+        dientichtamgiac = s => (
+            p = (a + b + c) / 2,
+            s = ((a > 0 && b > 0 && c > 0) && (a + b > c) && (b + c > a) && (c + a > b)) ? Math.sqrt(p * (p - a) * (
+                p - b) * (p - c)) : 'Tam Giac Khong ton tai',
+            document.write(s))
         dientichtamgiac();
     </script>
 </body>

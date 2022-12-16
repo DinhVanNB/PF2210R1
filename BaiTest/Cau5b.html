@@ -15,18 +15,18 @@
         for (let i = 0; i < n; i++) {
             arr[i] = prompt('Nhap phan tu thu ' + i);
         }
-
-        function dem(arrx, x) {
+        function dem( x) {
             var count = 0;
-            for (let i = 0; i < arrx.length; i++) {
-                if (arrx[i] == x) {
+            for (let i = 0; i < arr.length; i++) {
+                if (arr[i] == x) {
                     count++;
                 }
             }
             document.write(count);
         }
         let m = +prompt("Nhap vao so m can tim trong mang");
-        dem(arr, m);
+        dem(m);
+        // dem(arr, m);
     </script>
 </body>
 
