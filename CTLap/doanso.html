@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button onclick="startGame()">Chơi</button>
+    <script>
+        function startGame() {
+            let max = +prompt("Nhập vào số lớn nhất trong khoảng muốn chọn:");
+            let b = Math.floor(Math.random() * max);
+            let count = 0;
+            do {
+                let numberFind = +prompt("Nhập vào số muốn đoán: ");
+                if (numberFind == b) {
+                    alert("Chúc mừng bạn đoán đúng!, Mời bạn chơi tiếp"); 
+                    return;
+                } else {
+                    alert("Bạn đã đoán sai:");
+                    count ++;
+                }
+            }
+            while (count!=3)
+            alert("Bạn đã thua cuộc!");
+        }
+    </script>
+</body>
+
+</html>

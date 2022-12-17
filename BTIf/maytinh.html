@@ -10,7 +10,7 @@
 
 <body>
     <div width="400px">
-        <input style="width: 400px;" type="text" name="" id="src">
+        <input style="width: 400px; text-align: right;" type="text" name="" id="src">
     </div>
     <br>
     <div width="400px">
@@ -44,18 +44,29 @@
         let soA;
         let soB;
         let pheptinh;
+
         function inpp(x) {
             document.getElementById('src').value += x
         }
+
         function phepTinh(x) {
-            soA =parseInt( document.getElementById('src').value);
+            soA = parseInt(document.getElementById('src').value);
             document.getElementById('src').value = ' ';
-            pheptinh =x;
+            pheptinh = x;
         }
+
         function tinh() {
-            soB = parseInt(document.getElementById('src').value); 
-            document.getElementById('src').value = pheptinh=="+"? (soA+soB): pheptinh=="-"? (soA-soB): pheptinh=="*"? (soA*soB):pheptinh=="/"? soA/soB : "Error";
+            if (pheptinh != "") {
+                soB = parseInt(document.getElementById('src').value);
+                document.getElementById('src').value = pheptinh == "+" ? (soA + soB) : pheptinh == "-" ? (soA - soB) :
+                    pheptinh == "*" ? (soA * soB) : pheptinh == "/" ? soA / soB : "Error";
+                    pheptinh ="";
+            }
+            else{
+                soA= parseInt(document.getElementById('src').value);
+            }
         }
+
         function clearsrc() {
             document.getElementById('src').value = ' ';
         }
