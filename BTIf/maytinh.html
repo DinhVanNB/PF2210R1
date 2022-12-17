@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="vni">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div width="400px">
+        <input style="width: 400px;" type="text" name="" id="src">
+    </div>
+    <br>
+    <div width="400px">
+        <button style="width: 100px;" onclick="inpp(1)">1</button>
+        <button style="width: 100px;" onclick="inpp(2)">2</button>
+        <button style="width: 100px;" onclick="inpp(3)">3</button>
+        <button style="width: 95px;" onclick="phepTinh('+')">+</button>
+    </div>
+    <br>
+    <div width="400px">
+        <button style="width: 100px;" onclick="inpp(4)">4</button>
+        <button style="width: 100px;" onclick="inpp(5)">5</button>
+        <button style="width: 100px;" onclick="inpp(6)">6</button>
+        <button style="width: 95px;" onclick="phepTinh('-')">-</button>
+    </div>
+    <br>
+    <div width="400px">
+        <button style="width: 100px;" onclick="inpp(7)">7</button>
+        <button style="width: 100px;" onclick="inpp(8)">8</button>
+        <button style="width: 100px;" onclick="inpp(9)">9</button>
+        <button style="width: 95px;" onclick="phepTinh('*')">x</button>
+    </div>
+    <br>
+    <div width="400px">
+        <button style="width: 95px;" onclick="clearsrc()">AC</button>
+        <button style="width: 100px;" onclick="inpp(0)">0</button>
+        <button style="width: 100px;" onclick="tinh()">=</button>
+        <button style="width: 95px;" onclick="phepTinh('/')">/</button>
+    </div>
+    <script>
+        let soA;
+        let soB;
+        let pheptinh;
+        function inpp(x) {
+            document.getElementById('src').value += x
+        }
+        function phepTinh(x) {
+            soA =parseInt( document.getElementById('src').value);
+            document.getElementById('src').value = ' ';
+            pheptinh =x;
+        }
+        function tinh() {
+            soB = parseInt(document.getElementById('src').value); 
+            document.getElementById('src').value = pheptinh=="+"? (soA+soB): pheptinh=="-"? (soA-soB): pheptinh=="*"? (soA*soB):pheptinh=="/"? soA/soB : "Error";
+        }
+        function clearsrc() {
+            document.getElementById('src').value = ' ';
+        }
+    </script>
+</body>
+
+</html>

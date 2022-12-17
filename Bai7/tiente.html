@@ -5,19 +5,35 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        div{display: inline-block;
+        text-align: center;}
+    </style>
 </head>
 <body>
-    <input type="text" id="inputt">
-    <select name=""  id="select1">
-        <option value="VND">VND</option>
-        <option value="USD">USD</option>
-    </select>
-    <select name="" id="select2">
-        <option value="USD">USD</option>
-        <option value="VND">VND</option>
-    </select>
-    <button onclick="doi()">Quy đổi</button>
-    <h3 id="src"></h3>
+    <div>
+        <h5>Amount</h5>
+        <input type="text" id="inputt">
+    </div>
+    <div>
+        <h5>From Curency</h5>
+        <select name=""  id="select1">
+            <option value="VND">VND</option>
+            <option value="USD">USD</option>
+        </select>
+    </div>
+    <div>
+        <h5>To Curency</h5>
+        <select name="" id="select2">
+            <option value="USD">USD</option>
+            <option value="VND">VND</option>
+        </select>
+    </div>
+    <div>
+        <button onclick="doi()">Quy đổi</button>
+    </div>
+    
+    <p style="color: blue;" id="src"></p>
     <script>
         function doi(){
             let tien = document.getElementById('inputt').value;
@@ -27,10 +43,10 @@
                 document.getElementById('src').innerHTML = tien;
             }
             if(select1=="USD" && select2=="VND"){
-                document.getElementById('src').innerHTML = tien*24000;
+                document.getElementById('src').innerHTML ="Result: " + tien*24000 + " VND";
             }
             if(select1=="VND" && select2=="USD"){
-                document.getElementById('src').innerHTML = tien/24000 ;
+                document.getElementById('src').innerHTML ="Result: " + tien/24000  + " USD";
             }
         }
     </script>

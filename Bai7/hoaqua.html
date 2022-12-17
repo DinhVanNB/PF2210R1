@@ -12,23 +12,9 @@
     <button onclick="searchPrice()">Xem giá</button>
     <h3 id="rs"></h3>
     <script>
-        function searchPrice() {
-            
+        function searchPrice() {      
             let n = document.getElementById('inp').value.toLowerCase();
-            let g = "";
-            if(n=="ổi"){
-                g = "20k vnd";
-            }
-            else if(n=="dưa hấu"){
-                g = "30k vnd";
-            }
-            else if(n=="táo"){
-                g ="35k vnd";
-            }
-            else{
-                 g = "không tìm thấy kết quả"
-            }
-            document.getElementById('rs').innerHTML=g;
+            document.getElementById('rs').innerHTML= n=="ổi"?  "20k vnd":(n=="dưa hấu"? "20k vnd": (n=="táo"?"35k vnd": (n=="xoài"? "30k vnd": (n=="cam"?"40k vnd":(n=="chôm chôm"?"40k vnd":(n=="măng cụt"?"50k vnd":"không tìm thấy kết quả")))))); 
         }
     </script>
 </body>
