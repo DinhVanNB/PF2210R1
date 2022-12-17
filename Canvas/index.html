@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <img src="./Source/66428091_939260213080193_1476936886484808559_n.jpg" id="abc" alt=""  
+        style="left: 0px;position: absolute;top: 0px;width: 100px; height: 100px;">
+    <!-- <button onclick="sangPhai()">Sang Phai</button>
+    <button onclick="sangTrai()">Sang Trai</button>
+    <button onclick="lenTop()">Len Tren</button>
+    <button onclick="xuongBottom()">Xuong Duoi</button> -->
+    <script>
+        var obj = document.getElementById('abc').style;
+        let speedX = 5;
+        let speedY = 5;
+        var left=0,Top=0;
+        // window.addEventListener('keydown', (x) => {
+        //             if (x.key == 'a') {
+        //                 obj.left = parseInt(obj.left) + 50 + 'px';
+        //             }})
+        // sangPhai=ready=>obj.left= parseInt(obj.left) +50+'px'
+        // sangTrai=ready=>(obj.left= parseInt(obj.left) -50+'px')
+        // lenTop=ready=>(obj.top= parseInt(obj.top) -50+'px')
+        // xuongBottom=ready=>(obj.top= parseInt(obj.top) +50+'px')
+        // setInterval(() => {
+        //     obj.left = parseInt(obj.left) + speedX + 'px';
+        //     obj.top = parseInt(obj.top) + speedY + 'px';
+        //     if (parseInt(obj.left) >= screen.width - parseInt(obj.width)) {
+        //         speedX = -speedX;
+        //     }
+            
+        //     if (parseInt(obj.top) >= screen.height - parseInt(obj.height)) {
+        //         speedY = -speedY;
+        //     }
+        //     if (parseInt(obj.left) <= 0) {
+        //         speedX = -speedX;
+        //     }
+        //     if (parseInt(obj.top) <= 0) {
+        //         speedY = -speedY;
+        //     }
+            
+        // }, 5)
+        setInterval(()=>{   
+            if(left==0&& Top==0){
+                obj.left= parseInt(obj.left) +speedX+'px';
+                if(parseInt(obj.left) >= window.innerWidth - parseInt(obj.width))
+                {left=1;}
+            } 
+            else if(left==1 && Top==0){
+                obj.top = parseInt(obj.top) + speedY + 'px';
+                if(parseInt(obj.top) >= window.innerHeight - parseInt(obj.height))
+                {Top=1;}
+            }
+            else if(left==1 && Top==1){
+                obj.left= parseInt(obj.left) -speedX+'px';
+                if(parseInt(obj.left) <= 0)
+                {left=0;}
+            }
+            else{
+                obj.top = parseInt(obj.top) - speedY + 'px';
+                if(parseInt(obj.top) <=0)
+                {Top=0;}
+            }
+            debugger
+        },1)
+    </script>
+</body>
+
+</html>
