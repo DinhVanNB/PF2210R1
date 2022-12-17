@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="src" style="width:50px;text-align: left;"></div>
+    <div id="src1" style="width:50px;text-align: right;"></div>
+    <script>
+        let n = 5;
+        count = 0;
+        for (let i = 1; i <= n; i++) {
+            if (count == 0) {
+                for (let j = 0; j < i; j++) {
+                    document.getElementById('src').innerHTML += "*";
+                    document.getElementById('src1').innerHTML += "*";
+                }
+                document.getElementById('src').innerHTML += "<br>";
+                document.getElementById('src1').innerHTML += "<br>";
+            }
+            if (i >= 5) {
+                n = 10;
+                count = 1;
+                for (let k = n - i; k > 0; k--) {
+                    document.getElementById('src').innerHTML += "*";
+                    document.getElementById('src1').innerHTML += "*";
+                }
+                document.getElementById('src').innerHTML += "<br>";
+                document.getElementById('src1').innerHTML += "<br>";
+            }
+        }
+    </script>
+
+</body>
+
+</html>
