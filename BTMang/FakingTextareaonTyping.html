@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <center>
+        <h2>Type anthing slowly</h2>
+        <form name="f">
+            <textarea name="txt" cols="40" rows="10" ></textarea>
+        </form>
+    </center>
+    <script>
+        let str = "Chương trình tự động!",
+            n = "";
+        let i = str.length;
+        let count = 0;
+        window.addEventListener('keydown', (x) => {
+            if (x.key != "") {
+                count++;
+                n = n + str[count-1];
+                document.f.txt.value = n;
+                if (count == 22) {
+                    document.f.txt.value = "";
+                    n = "";
+                    count=0;
+                }
+            }
+        })
+        
+    </script>
+</body>
+
+</html>
