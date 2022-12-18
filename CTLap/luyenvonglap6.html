@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //B6
+        let count= 0;
+        let tong=0;
+        for(let i= 0; count<30;i++){
+            if(i%7==0){
+                tong+= i;
+                document.write(i );
+                if(count<29)
+                {
+                    document.write(" + ");
+                }
+                count ++;
+            }
+        }
+        document.write("= " +tong);
+    </script>
+</body>
+</html>
