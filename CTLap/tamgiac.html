@@ -18,22 +18,19 @@
             if (count == 0) {
                 for (let j = 0; j < i; j++) {
                     document.getElementById('src').innerHTML += "*";
-                    document.getElementById('src1').innerHTML += "*";
                 }
-                document.getElementById('src').innerHTML += "<br>";
-                document.getElementById('src1').innerHTML += "<br>";
+                document.getElementById('src').innerHTML += "<br>";         
             }
             if (i >= 5) {
                 n = 10;
                 count = 1;
                 for (let k = n - i; k > 0; k--) {
-                    document.getElementById('src').innerHTML += "*";
-                    document.getElementById('src1').innerHTML += "*";
+                    document.getElementById('src').innerHTML += "*";    
                 }
-                document.getElementById('src').innerHTML += "<br>";
-                document.getElementById('src1').innerHTML += "<br>";
+                document.getElementById('src').innerHTML += "<br>"; 
             }
         }
+        document.getElementById('src1').innerHTML =  document.getElementById('src').innerHTML;
     </script>
 
 </body>
