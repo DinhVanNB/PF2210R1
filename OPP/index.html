@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // var hocsinh = {
+        //     ten:'',
+        //     lop:'',
+        //     nienkhoa:'',
+        //     printDTB: function(){
+        //         alert((monhoc.toan+ monhoc.ly +monhoc.hoa)/3)
+        //     }
+        // }
+        // var monhoc={
+        //     toan: +prompt('Nhap diem mon toan'),
+        //     ly: +prompt('Nhap diem mon ly'),
+        //     hoa:+prompt('Nhap diem mon hoa'),
+        // }
+
+        // hocsinh.printDTB();
+        // class Circle {
+        //     constructor(color, radius)
+        //     {
+        //         this.color = color;
+        //         this.radius = radius;
+        //     }
+        //     getInfo() {
+        //         alert("Ban kinh la : " + this.radius + "mau sac la: " + this.color);
+        //     }
+        // }
+        // let c1 =new  Circle("red",15);
+        // c1.getInfo();
+        class Product{
+            constructor(name, price, amount){
+                this.name = name;
+                this.price = price;
+                this.amount = amount;}
+                getInfo(){
+                    alert("Sản phẩm "+ this.name+ " giá bán: " + this.price + "$ số lượng " + this.amount);
+                }
+            }
+        
+        let IPX = new Product("IphoneX", 10,5);
+        let IP6 = new Product("Iphone6", 5,3);
+        let IP7 = new Product("Iphone7", 8,2);
+        IPX.getInfo();
+        IP7.getInfo();
+        IP6.getInfo();
+    </script>
+</body>
+
+</html>

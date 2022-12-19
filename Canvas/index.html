@@ -9,8 +9,8 @@
 </head>
 
 <body>
-    <img src="./Source/66428091_939260213080193_1476936886484808559_n.jpg" id="abc" alt=""  
-        style="left: 0px;position: absolute;top: 0px;width: 100px; height: 100px;">
+    <img src="./Source/Screenshot_20221122_093634.png" id="abc" alt=""  
+        style="left: 0px;position: absolute;top: 0px;width: 50px; height: 50px;">
     <!-- <button onclick="sangPhai()">Sang Phai</button>
     <button onclick="sangTrai()">Sang Trai</button>
     <button onclick="lenTop()">Len Tren</button>
@@ -49,13 +49,13 @@
         setInterval(()=>{   
             if(left==0&& Top==0){
                 obj.left= parseInt(obj.left) +speedX+'px';
-                if(parseInt(obj.left) >= window.innerWidth - parseInt(obj.width))
-                {left=1;}
+                if(parseInt(obj.left) >= window.innerWidth - parseInt(obj.width)|| parseInt(obj.left) <=0)
+                {left=1;Top=0;}
             } 
             else if(left==1 && Top==0){
                 obj.top = parseInt(obj.top) + speedY + 'px';
-                if(parseInt(obj.top) >= window.innerHeight - parseInt(obj.height))
-                {Top=1;}
+                if(parseInt(obj.top) >= window.innerHeight - parseInt(obj.height)||parseInt(obj.top) <=0)
+                {Top=1;left=1;}
             }
             else if(left==1 && Top==1){
                 obj.left= parseInt(obj.left) -speedX+'px';
@@ -67,8 +67,20 @@
                 if(parseInt(obj.top) <=0)
                 {Top=0;}
             }
-            debugger
+            
         },1)
+        // window.addEventListener('keydown', (x)=>{
+        //     if(x.key!=""){
+        //         if(left==0&& Top==0){
+        //             left=1;
+        //             Top=1;
+        //         }
+        //         if(left==1&& Top==0){
+        //             left=0;
+        //             Top=1;
+        //         }
+        //     }
+        // })
     </script>
 </body>
 
