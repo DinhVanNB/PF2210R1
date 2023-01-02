@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+    <body style="font-size: 20px;">
+        <h5>Nhập số đơn vị meter or feet cần quy đổi:</h5>
+        <input id="inpp" type="text">
+        <select name="" id="selection">
+            <option value="ft">Feet</option>
+            <option value="met">Meter</option>
+        </select>
+        <button  id="btnChange">Quy đổi</button>
+        <h5 id="result"></h5>
+        <script>
+            var obj = document.getElementById.bind(document);
+            obj('btnChange').addEventListener('click',()=>
+                obj('result').innerHTML = obj('selection').value =='ft' ? (footToMeter(parseFloat(obj('inpp').value)) + ' met') : (meterToFoot (parseFloat(obj('inpp').value)) + ' feet')
+            )
+            function footToMeter(foot){
+                meter = 0.305 * foot;
+                debugger
+                return meter;
+            }
+            function meterToFoot(meter){
+                foot = 3.279 * meter ;
+                return foot;
+            }
+        </script>
+    </body>
+    </html>
+</body>
+</html>
