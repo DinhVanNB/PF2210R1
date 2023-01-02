@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        class mobile{
+            constructor(name, battery,drap,inbox,send){
+                this.name = name ;
+                this.battery =battery;
+                this.drap =drap;
+                this.inbox = inbox;
+                this.send = send;
+                this.onOff = true;
+            }
+            statusOnOff(){
+                if(this.onOff == true){
+                    return "Điện thoại đang bật";
+                    this.battery--;
+                }
+                else 
+                    return "Điện thoại đang tắt";
+                    this.battery--;
+            }
+            pressOnOff(){
+                if(this.onOff == true){
+                    this.onOff==false;
+                    this.battery--;
+                }
+                else{
+                    this.onOff == true;
+                    this.battery--;
+                }
+            }
+            charge(){
+                while(0<=this.battery && this.battery<100){
+                    this.battery++;
+                }   
+                return "Đã sạc đầy";
+            }
+            drapBox(x){
+                let drapBox = x;
+                return drapBox;
+            }
+            hopThuDen(x){
+                let hopThu =[];
+                if(this.inbox >0){
+                    hopThu.push(x);
+                    this.inbox --;
+                }
+                else{
+                    alert("Hop thu den da day");
+                } 
+                return hopThu;              
+            }
+            hopThuDi(x){
+                let hopThu= [];
+                if(this.send>0){
+                    hopThu.push(x);
+                    this.send--;
+                }
+                else {
+                    alert("Hop Thu Di da day");
+                }
+            }
+        }
+    </script>
+</body>
+</html>

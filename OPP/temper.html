@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+     <style>
+        div{display: inline-block;
+        text-align: center;}
+    </style>
+</head>
+<body>
+    <div>
+        <h5>Temperature *C</h5>
+        <input type="text" id="inpp">
+    </div>
+    <div>
+        <h5>Unit</h5>
+        <select name="" id="selectUnit">
+            <option value="F">F</option>
+            <option value="K">K</option>
+        </select>
+    </div>
+    <div>
+        <button onclick="quyDoi()">Chuyển</button>
+    </div>
+    <br>
+    <h5 id="src"></h5>
+    <script>
+        
+        class temper{
+            constructor(celius){
+                this.celius = celius;
+            }
+            getKelvin(){
+                return this.celius + 273.15;
+            }
+            getFahrenheit(){
+                return this.celius*9/5+32;
+            }
+        }
+        function quyDoi(){
+            let select1 = document.getElementById('selectUnit').value;
+            let quy = new temper(parseInt(document.getElementById('inpp').value));
+            if(select1 =="F"){
+                document.getElementById('src').innerHTML= quy.getFahrenheit();
+            }
+            if(select1 =="K"){
+                document.getElementById('src').innerHTML= quy.getKelvin();            
+            }
+        }
+    </script>
+</body>
+</html>

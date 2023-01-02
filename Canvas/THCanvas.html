@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- <canvas style=" border: 5px solid;" width="500px" height="500px" id="myCanvas"></canvas>
+    <script>
+        let ctx = document.getElementById('myCanvas').getContext('2d');
+        // ctx.arc(200, 200, 100, 0, 2 * Math.PI);
+        // ctx.stroke();
+        ctx.fillStyle ='red'
+        ctx.fillRect(50,50,100,50)
+        // ctx.fill();
+    </script> -->
+
+    <canvas id="game" width="800" height="600" style="border: 3px solid #000000" ></canvas>
+    <!-- <script>
+        let gameContext = document.getElementById("game").getContext("2d");
+        let carYPosition = 20;
+        function drawCar() {
+            gameContext.beginPath();
+            gameContext.fillStyle = '#fa4b2a';
+            gameContext.fillRect(20, carYPosition, 150, 100);
+        }
+        let yDistance = 1;
+        function moveCar() {
+            gameContext.clearRect(20, carYPosition, 150, 100);
+            let isTouchTop = carYPosition < 0;
+            let isTouchBottom = carYPosition + 100 > 600;
+            if (isTouchTop || isTouchBottom) {
+                yDistance = -yDistance;
+            }
+            carYPosition += yDistance;
+            drawCar();
+        }
+        setInterval(moveCar, 1);
+    </script> -->
+    <!-- <script>
+        let gameContext = document.getElementById("game").getContext("2d");
+        class Circle{
+            constructor(x, y , radius, color){
+                this.x = x;
+                this.y= y;
+                this.radius = radius;
+                this.color = color;
+
+            }
+            getInfo(){
+                alert("Hình tròn có bán kính là: " + this.radius + " và màu là: " + this.color);
+            }
+            draw(){
+                gameContext.beginPath();
+                gameContext.arc(this.x, this.y, this.radius,0,2*Math.PI);
+                gameContext.fillStyle =this.color;
+                gameContext.fill();
+                gameContext.closePath();
+
+            }
+        
+        }
+        new Circle(200, 120, 20, 'red').draw();
+        new Circle(60,60,60,'yellow').draw();
+    </script> -->
+    <script>
+        let rectangular = document.getElementById("game").getContext("2d");
+        class Rectan{
+            constructor(x,y,width,height, color){
+                this.x= x;
+                this.y= y;
+                this.width = width;
+                this.height = height;
+                this.color = color;
+            }
+            render(){
+                rectangular.beginPath();
+                rectangular.fillStyle = this.color;
+                rectangular.rect(this.x, this.y, this.width, this.height);
+                rectangular.fill();
+                rectangular.closePath();
+            }
+        }
+        new Rectan(10,10, 100, 50 , 'red').render();
+       
+    </script>
+</body>
+
+</html>

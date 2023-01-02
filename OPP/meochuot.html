@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        class mouse {
+            constructor(name, weight, v, sound) {
+                this.name = name;
+                this.weight = weight;
+                this.v = v;
+                this.sound = sound;
+            }
+            statusL(x) {
+                if (x.v < this.v) {
+                    alert("Chuột " + this.name + " vẫn sống!!");
+                } else {
+                    alert("Chuột " + this.name + " đã chết!");
+                    this.weight = 0;
+                }
+            }
+            say(){
+                alert(this.sound);
+            }
+
+        }
+        class cat {
+            constructor(name, weight, v, sound) {
+                this.name = name;
+                this.weight = weight;
+                this.v = v;
+                this.sound = sound;
+            }
+            hunt(x) {
+                if (x.v < this.v) {
+                    alert("Mèo " + this.name + " đã bắt được chuột " + x.name);
+                } else
+                    alert("Mèo " + this.name + " không bắt được chuột " + x.name);
+            }
+            eat(x) {
+                if (x.v < this.v) {
+                    if (x.weight != 0 ) {
+                         alert("Mèo " + this.name + " đã ăn được chuột " + x.name +" cân nặng hiện tại của mèo là: "+ (this.weight+x.weight));  
+                    }
+                    else 
+                        alert("Mèo " + this.name + " không ăn chuột chết " + x.name);
+                }
+            }
+            say(){
+                alert(this.sound);
+            }
+        }
+       let cat1 = new cat("Tom",5, 1.2,"meomeo");
+       let mouse1 = new mouse("Jerry",1, 0.8,"chit chit");
+       cat1.hunt(mouse1);
+       cat1.eat(mouse1);
+       mouse1.statusL(cat1);
+    </script>
+</body>
+
+</html>
