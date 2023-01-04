@@ -112,4 +112,4 @@ class altp {
         location.reload();
     }
 }
-var game = new altp();
+var game = new altp(); 
