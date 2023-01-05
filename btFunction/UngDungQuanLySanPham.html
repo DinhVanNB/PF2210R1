@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="vni">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quản lý sản phẩm</title>
+    <style>
+        th{
+            padding:5px;
+        }
+        td{
+            padding: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <h3>Add product</h3>
+        <input type="text" id="add">
+        <button onclick="addProduct()">Add</button>
+        <h4>Display all product</h4>
+        <table id="displayArea" border="1" style="border-collapse:collapse;">
+
+        </table>
+    </div>
+    <div id="edit"></div>
+    
+    <script>
+        let listProduct = ['Ip12', 'Note 10', 'S10', 'Ip3 xx Max', 'Nokia 1280'];
+        displayAll();
+        function displayAll() {
+            let str = '<tr>\n' +
+                '<th>Product Name</th>\n' +
+                '<th></th>\n' + '<th>'
+                + listProduct.length
+                + ' product</th>\n'
+                + '</tr>';
+            for (let i = 0; i < listProduct.length; i++) {
+                str += '<tr><td>' + listProduct[i] + '</td>'
+                    + '<td><button onclick="showEdit('+ i +')">Edit</button></td>' +
+                    '<td><button onclick="deleteProduct('+ i +')">Delete</button></td></tr>'
+            }
+            document.getElementById('displayArea').innerHTML = str;
+        }
+
+        function addProduct(){
+            let productName = document.getElementById('add').value;
+            document.getElementById('add').value = '';
+            listProduct.push(productName);
+            displayAll();
+        }
+
+        function deleteProduct(inDex){
+            listProduct.splice(inDex, 1);
+            displayAll();
+        }
+
+        function showEdit(inDex){
+            let str = '';
+            str = '<input type="text" id="editProduct" value="'+listProduct[inDex]+'" > <button onclick="saveProduct('+inDex+')"> Save</button>';
+            document.getElementById('edit').innerHTML =str;
+        }
+
+        function saveProduct(inDex){
+            listProduct[inDex] = document.getElementById('editProduct').value;
+            document.getElementById('edit').innerHTML = '';
+            displayAll();
+        }
+
+    </script>
+</body>
+</html>
