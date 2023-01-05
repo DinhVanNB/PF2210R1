@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    #game-board {
+        position: relative;
+        margin-top: 50px;
+    }
+
+    .cell {
+        border: none;
+        text-align: center;
+        font-size: 20pt;
+        cursor: pointer;
+        color: red;
+    }
+</style>
+<body>
+    <button onclick="start()">Start</button>
+    <div>
+        <span>Lượt của: &nbsp;</span> <span id="idPlayer"></span>
+    </div>
+    <div id="game-board">
+    </div>
+    <script>
+        let gameCaro;
+        const VALUE_EMPTY = 1,
+            Player_X = 2,
+            Player_0 = 3,
+            default_size = 40,
+            default_cols = 20,
+            default_rows = 20;
+
+        function Cell(x, y) {
+            this.x = y;
+            this.y = y;
+            this.value = VALUE_EMPTY;
+            this.getCellHtml = function () {
+                var top = x * default_size;
+                var left = y * default_size;
+                var cellHtml =
+                    `<div id="cell-${x}-${y}" onclick="play(${x},${y})" class="cell" style="position: absolute; width: ${default_size}px; height:${default_size}px; left:${left}px; top:${top}px; line-height:${default_size}px;">.</div>`;
+                return cellHtml;
+            };
+            this.draw = function () {
+                var cellDiv = document.getElementById(`cell-${x}-${y}`);
+                switch (this.value) {
+                    case Player_X:
+                        cellDiv.innerHTML = 'X';
+                        break;
+                    case Player_0:
+                        cellDiv.innerHTML = 'O';
+                        break;
+                    default:
+                        cellDiv.innerHTML = '.';
+                        break;
+                }
+            }
+        }
+
+        function GameBoard(rows, cols, elementId) {
+            this.rows = rows;
+            this.cols = cols;
+            this.elementId = elementId;
+            this.turn = Player_X;
+            document.getElementById('idPlayer').innerHTML = 'Player_X';
+            this.cells = [];
+            this.overGame = false;
+
+            this.draw = function () {
+                var gameBoardDiv = document.getElementById(this.elementId);
+                gameBoardDiv.innerHTML = '';
+                for (var i = 0; i < this.rows; i++) {
+                    var row = [];
+                    this.cells.push(row);
+                    for (var j = 0; j < this.cols; j++) {
+                        var cell = new Cell(i, j);
+                        row.push(cell);
+                        gameBoardDiv.innerHTML += cell.getCellHtml();
+                    }
+                }
+            };
+
+            this.play = function (x, y) {
+                if (this.overGame) {
+                    return;
+                }
+                var cell = this.cells[x][y];
+                if (cell.value === VALUE_EMPTY) {
+                    cell.value = this.turn;
+                    cell.draw();
+                    this.check(x, y);
+                    if (this.turn === Player_0) {
+                        document.getElementById('idPlayer').innerHTML = 'Player_X';
+                        this.turn = Player_X;
+                    } else {
+                        document.getElementById('idPlayer').innerHTML = 'Player_O';
+                        this.turn = Player_0;
+                    }
+                } else {
+                    alert('Ô này đã đánh rồi!!');
+                }
+            };
+
+            this.check = function (x, y) {
+                var cell = this.cells[x][y];
+                //Check thắng theo chiều ngang
+                var count = 1;
+                var i = 1;
+                while ((y + i < this.cols) && this.cells[x][y + i].value === cell.value) {
+                    count++;
+                    i++;
+                }
+                var i = 1;
+                while ((y - 1 >= 0) && this.cells[x][y - i].value === cell.value) {
+                    count++;
+                    i++;
+                }
+                this.endGame(count);
+                //Check thắng theo chiều dọc 
+                var count = 1;
+                var i = 1;
+                while ((x + i < this.rows) && this.cells[x + i][y].value === cell.value) {
+                    count++;
+                    i++;
+                }
+                var i = 1;
+                while ((x - i >= 0) && this.cells[x - i][y].value === cell.value) {
+                    count++;
+                    i++;
+                }
+                this.endGame(count);
+                //Check thắng theo đường chéo thứ nhất
+                var count = 1;
+                var i = 1;
+                while ((x + i < this.rows) && (y + i < this.cols) && this.cells[x + i][y + i].value === cell
+                    .value) {
+                    count++;
+                    i++;
+                }
+                var i = i;
+                while ((x - i >= 0) && (y - i >= 0) && this.cells[x - i][y - i].value === cell.value) {
+                    count++;
+                    i++;
+                }
+                this.endGame(count);
+                //check thắng theo đường chéo thứ hai
+                var count = 1;
+                var i = 1;
+                while ((x - i >= 0) && (y + i < this.cols) && this.cells[x - i][y + i].value === cell.value) {
+                    count++;
+                    i++;
+                }
+                var i = 1;
+                while ((x + i < this.rows) && (y - i >= 0) && this.cells[x + i][y - i].value === cell.value) {
+                    count++;
+                    i++;
+                }
+                this.endGame(count);
+            };
+
+            this.endGame = function (count) {
+                if (count >= 3) {
+                    this.overGame = true;
+                    alert((this.turn == 2 ? 'Player_X' : 'Player_O') + ' thắng!');
+                }
+            }
+
+        }
+
+        function start() {
+            gameCaro = new GameBoard(default_rows, default_cols, 'game-board');
+            gameCaro.draw();
+        }
+
+        function play(x, y) {
+            gameCaro.play(x, y);
+        }
+        start();
+    </script>
+</body>
+
+</html>
