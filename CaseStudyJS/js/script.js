@@ -1,4 +1,4 @@
-let ktBtn,timerCheck,timer;
+let ktBtn, timerCheck, timer;
 class altp {
     constructor() {
         this.ui = new ui();
@@ -41,13 +41,13 @@ class altp {
     gamePlay() {
         this.ui.showScreen('srcQuestion');
         this.ui.showQuestion(this.questions);
-        setTimeout(()=>{
-            if(currentQuestion==0){
+        setTimeout(() => {
+            if (currentQuestion == 0) {
                 timer = setInterval(this.ui.timeCountDown, 1000);
                 this.soundCountDownt.start();
                 ktBtn = true;
             }
-        },2000)
+        }, 2000)
         this.ui.clickAnswer((index) => {
             if (ktBtn == true) {
                 ktBtn = false,
@@ -86,11 +86,11 @@ class altp {
         });
         timerCheck = setInterval(() => {
             this.sound3s.reload();
-            if (this.ui.checkTime() < 4 && ktBtn ==true) {
+            if (this.ui.checkTime() < 4 && ktBtn == true) {
                 this.soundCountDownt.stop();
                 this.sound3s.start();
             }
-            if (this.ui.checkTime() <= 0 & ktBtn==true) {
+            if (this.ui.checkTime() <= 0 & ktBtn == true) {
                 this.ui.stopCountDown(timer);
                 this.sound3s.stop();
                 this.stop();
@@ -112,4 +112,4 @@ class altp {
         location.reload();
     }
 }
-var game = new altp(); 
+var game = new altp();

@@ -1,17 +1,17 @@
-class sound{
-    constructor(fileName){
-        this.audio= new Audio('sound/' + fileName);
+class sound {
+    constructor(fileName) {
+        this.audio = new Audio('sound/' + fileName);
     }
-    start(){  
-       this.audio.play();
+    start() {
+        this.audio.play();
     }
-    reload(){
+    reload() {
         this.audio.load();
     }
-    ended(soundEnded){
+    ended(soundEnded) {
         this.audio.addEventListener('ended', soundEnded);
     }
-    stop(){
+    stop() {
         this.audio.pause();
     }
 }
